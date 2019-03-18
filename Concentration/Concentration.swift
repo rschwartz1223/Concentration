@@ -76,8 +76,7 @@ struct Concentration
         //Shuffle the cards
         for number in 1...cards.count
         {
-            let randomIndex = Int(arc4random_uniform(UInt32(cards.count - number)))
-            cards.append(cards.remove(at: randomIndex))
+            cards.append(cards.remove(at: (cards.count - number).arc4random))
         }
     }
 }
